@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dummy Webpage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333333;
+    }
+
+    #myButton {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #myButton:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to the Dummy Webpage!</h1>
+  <button id="myButton">Click Me!</button>
+
+  <script>
+    var button = document.getElementById("myButton");
+    button.addEventListener("click", function() {
+      alert("Button clicked!");
+    });
+  </script>
+</body>
+</html>
