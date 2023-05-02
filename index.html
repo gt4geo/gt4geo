@@ -23,7 +23,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
+      margin-top: 5px;
     }
 
     th, td {
@@ -69,6 +69,8 @@
 </head>
 <body>
   <div class="container">
+	<h2>Image Classifier</h2>
+	<div><p>Please upload a image and see the classification results on a table below.</p></div>
     <input type="file" id="upload"  accept="image/*" />
     <img id="img" style="max-height: 300px;">
     <table id="predicts"></table>
@@ -95,18 +97,19 @@
             model.classify(img).then(predictions => {
               predictsTable.innerHTML = '';
 
-              const thead = document.createElement('thead');
+              const tbody = document.createElement('tbody');
+			  
+			  const thead = document.createElement('thead');
               const tr = document.createElement('tr');
               const th1 = document.createElement('th');
               const th2 = document.createElement('th');
-              th1.textContent = 'ClassName';
+			  th1.textContent = 'ClassName';
               th2.textContent = 'Probability';
               tr.appendChild(th1);
               tr.appendChild(th2);
               thead.appendChild(tr);
               predictsTable.appendChild(thead);
-
-              const tbody = document.createElement('tbody');
+			  
               predictions.forEach(prediction => {
                 const tr = document.createElement('tr');
                 const td1 = document.createElement('td');
@@ -129,5 +132,3 @@
   </script>
 </body>
 </html>
-
-
